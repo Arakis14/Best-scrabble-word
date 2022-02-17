@@ -28,4 +28,5 @@ enum alphabet
   x,
   y,
   z,
+  //blank,
 };
