@@ -2,8 +2,9 @@
 class ITile
 {
 public:
-  ITile() = default; 
+  ITile(int bonus);
   virtual ~ITile() = default;
 
   virtual int bonus() = 0;
+  int _bonus;
 };
