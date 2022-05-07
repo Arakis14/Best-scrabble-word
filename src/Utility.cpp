@@ -126,7 +126,7 @@ void pickLetterAtRandom(const std::shared_ptr<std::vector<CLetter>> &bag, const 
   bag->erase(bag->begin() + random);
 }
 
-void fillTrayWithLetters(const std::shared_ptr<std::vector<CLetter>> &bag, const std::shared_ptr<std::vector<CLetter>> &player)
+void fillTrayWithRandomLetters(const std::shared_ptr<std::vector<CLetter>> &bag, const std::shared_ptr<std::vector<CLetter>> &player)
 {
   long unsigned int trayMax = 7;
   while (player->size() != trayMax)
@@ -145,12 +145,12 @@ std::string showLetters(const std::shared_ptr<std::vector<CLetter>> &player)
   return temp;
 }
 
-int findLetter(const std::shared_ptr<std::vector<CLetter>> &player, char &letter)
+int findLetter(const std::shared_ptr<std::vector<CLetter>> &container, const char &letter)
 {
   std::string temp{};
-  for (long unsigned int i = 0; i < player->size(); i++)
+  for (long unsigned int i = 0; i < container->size(); i++)
   {
-    temp += player->at(i).showLetter();
+    temp += container->at(i).showLetter();
   }
   auto res = temp.find(letter);
   if (res == std::string::npos)
@@ -176,4 +176,16 @@ bool isWordInDictionary(const std::string &word)
   auto res = std::find(begin(dictionary), end(dictionary), word);
   if (res != std::end(dictionary)) { return true; }
   return false;
+}
+
+bool pickSpecificLetter(const std::shared_ptr<std::vector<CLetter>> &bag, const std::shared_ptr<std::vector<CLetter>> &player, const char &letter)
+{
+  auto res = findLetter(bag, letter);
+  if (res == -1)  { 
+    std::cout << "Could not find " << letter << std::endl;
+    return false; 
+  }
+  player->insert(player->begin(), bag->at(res));
+  bag->erase(bag->begin() + res);
+  return true;
 }
