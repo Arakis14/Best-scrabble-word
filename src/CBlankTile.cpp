@@ -1,6 +1,11 @@
 #include "CBlankTile.hpp"
 
-int bonus()
+std::string CBlankTile::show()
 {
-  return 0;
+  if (empty_)
+  {
+    return "";
+  }
+  else 
+    return "x";
 }

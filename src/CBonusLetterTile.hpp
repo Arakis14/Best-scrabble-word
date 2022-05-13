@@ -2,5 +2,6 @@
 
 class CBonusLetterTile : public ITile
 {
-  int bonus() override;
+public:
+
 };

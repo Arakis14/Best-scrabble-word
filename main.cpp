@@ -2,10 +2,13 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "src/CBlankTile.cpp"
 #include "src/CLetter.cpp"
 #include "src/Alphabet.hpp"
 #include "src/Utility.cpp"
+#include "src/CBoard.cpp"
+#include "src/CBlankTile.cpp"
+
+const int boardSize = 5;
 
 int main()
 {
@@ -25,4 +28,6 @@ int main()
     //findLetter(player,letter);
     canUseWord(player, test1);
     std::cout << std::boolalpha << "Is word " << test1 << " in the dictionary? " << isWordInDictionary(test1) << std::endl;
+    auto board = CBoard(5);
+    board.show();
 }   

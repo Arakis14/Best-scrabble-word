@@ -3,5 +3,10 @@
 
 class CBlankTile : public ITile
 {
-  int bonus() override;
+public:
+  CBlankTile() = default;
+  std::string show() override;
+private:
+  int bonus_;
+  bool empty_ = true;
 };

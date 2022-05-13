@@ -1,7 +1,7 @@
 #include "CLetter.hpp"
 
 CLetter::CLetter(alphabet letter)
-: _letter(letter)
+: letter_(letter)
 {
   if (letter == a ||
       letter == e ||
@@ -58,6 +58,6 @@ CLetter::CLetter(alphabet letter)
 std::string CLetter::showLetter()
 {
   std::string temp{};
-  temp = this->_letter;
+  temp = this->letter_;
   return temp;
 }
