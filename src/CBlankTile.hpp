@@ -5,8 +5,9 @@ class CBlankTile : public ITile
 {
 public:
   CBlankTile() = default;
-  std::string show() override;
+  void show() override;
+  bool putLetter(CLetter letter) override;
 private:
-  int bonus_;
   bool empty_ = true;
+  char letter_;
 };

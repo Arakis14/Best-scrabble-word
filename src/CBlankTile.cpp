@@ -1,11 +1,18 @@
 #include "CBlankTile.hpp"
 
-std::string CBlankTile::show()
+void CBlankTile::show()
 {
   if (empty_)
   {
-    return "";
+    std::cout << " " << '\n';
   }
   else 
-    return "x";
+    std::cout << letter_ << '\n';
+}
+
+bool CBlankTile::putLetter(CLetter letter)
+{
+  letter_ = letter.getLetter();
+  empty_ = false;
+  return true;
 }

@@ -30,4 +30,7 @@ int main()
     std::cout << std::boolalpha << "Is word " << test1 << " in the dictionary? " << isWordInDictionary(test1) << std::endl;
     auto board = CBoard(5);
     board.show();
+    auto tile = CBlankTile();
+    tile.putLetter(alphabet::a);
+    tile.show();
 }   

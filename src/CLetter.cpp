@@ -61,3 +61,8 @@ std::string CLetter::showLetter()
   temp = this->letter_;
   return temp;
 }
+
+char CLetter::getLetter()
+{
+  return letter_;
+}
